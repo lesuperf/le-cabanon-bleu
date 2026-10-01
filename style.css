@@ -1,0 +1,1176 @@
+/* =========================================================
+   LE CABANON BLEU — Feuille de style luxe
+   Palette : bleu nuit, doré, ivoire
+   ========================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bleu-nuit: #0d1b2a;
+  --bleu-profond: #1b263b;
+  --bleu-doux: #2c3e50;
+  --dore: #c9a961;
+  --dore-clair: #e0c78a;
+  --dore-texte: #806326;
+  --ivoire: #f8f5ef;
+  --ivoire-fonce: #f0ebe0;
+  --texte: #2a2a2a;
+  --texte-doux: #666;
+  --ombre-douce: 0 10px 40px rgba(13, 27, 42, 0.08);
+  --ombre-forte: 0 20px 60px rgba(13, 27, 42, 0.18);
+  --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 110px;
+}
+
+body {
+  overflow-wrap: break-word;
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  color: var(--texte);
+  line-height: 1.7;
+  background: var(--ivoire);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+  color: var(--bleu-nuit);
+  letter-spacing: 0.5px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(13, 27, 42, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(201, 169, 97, 0.15);
+  transition: var(--transition);
+}
+
+.nav-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--ivoire);
+  text-decoration: none;
+  letter-spacing: 2px;
+  position: relative;
+  transition: var(--transition);
+}
+
+.logo::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--dore);
+  transition: width 0.5s ease;
+}
+
+.logo:hover {
+  color: var(--dore-clair);
+  letter-spacing: 3px;
+}
+
+.logo:hover::after {
+  width: 100%;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 40px;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: rgba(248, 245, 239, 0.85);
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 400;
+  position: relative;
+  padding: 6px 0;
+  transition: var(--transition);
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 1px;
+  background: var(--dore);
+  transition: all 0.4s ease;
+  transform: translateX(-50%);
+}
+
+.nav-links a:hover {
+  color: var(--dore-clair);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.btn-reserver {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  isolation: isolate;
+  background: transparent !important;
+  border: 1px solid var(--dore) !important;
+  color: var(--dore) !important;
+  padding: 10px 28px !important;
+  border-radius: 0;
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.btn-reserver::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--dore);
+  transition: left 0.4s ease;
+  z-index: -1;
+}
+
+.btn-reserver:hover {
+  color: var(--bleu-nuit) !important;
+}
+
+.btn-reserver:hover::before {
+  left: 0;
+}
+
+.btn-reserver::after {
+  display: none;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.hero {
+  height: 100vh;
+  min-height: 650px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--ivoire);
+  padding: 100px 20px 40px;
+  position: relative;
+  overflow: hidden;
+  background: #0d1b2a url('image/vieuxport2.jpg') center/cover no-repeat;
+  background-position: center -20%;
+  background-attachment: fixed;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(13, 27, 42, 0.55) 0%,
+    rgba(13, 27, 42, 0.75) 100%
+  );
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  animation: fadeUp 1.2s ease both;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-subtitle {
+  font-size: 0.8rem;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+  color: var(--dore-clair);
+  font-weight: 400;
+}
+
+.hero h1 {
+  font-size: 4.5rem;
+  color: var(--ivoire);
+  margin-bottom: 25px;
+  line-height: 1.1;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+.hero-text {
+  font-size: 1.15rem;
+  margin-bottom: 45px;
+  opacity: 0.9;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+}
+
+/* =========================================================
+   BOUTON PRINCIPAL
+   ========================================================= */
+.btn-primary {
+  isolation: isolate;
+  display: inline-block;
+  background: var(--dore);
+  color: var(--bleu-nuit);
+  padding: 16px 45px;
+  text-decoration: none;
+  border: 1px solid var(--dore);
+  font-family: 'Jost', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--dore);
+  transition: left 0.4s ease;
+  z-index: -1;
+}
+
+.btn-primary:hover {
+  color: var(--bleu-nuit);
+}
+
+.btn-primary:hover::before {
+  left: 0;
+}
+
+.hero .btn-primary {
+  background: var(--dore);
+  color: var(--bleu-nuit);
+  transition: transform 0.25s ease;
+}
+
+.hero .btn-primary::before {
+  content: none;
+}
+
+.hero .btn-primary:hover {
+  transform: scale(1.04);
+}
+
+/* =========================================================
+   SECTIONS
+   ========================================================= */
+section {
+  padding: 110px 0;
+}
+
+section h2 {
+  font-size: 3rem;
+  margin-bottom: 25px;
+  text-align: center;
+  font-weight: 400;
+  position: relative;
+  display: block;
+}
+
+section h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 1px;
+  background: var(--dore);
+  margin: 25px auto 0;
+}
+
+.section-intro {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 70px;
+  color: var(--texte-doux);
+  font-size: 1.05rem;
+  font-weight: 300;
+}
+
+/* =========================================================
+   PRÉSENTATION
+   ========================================================= */
+.presentation {
+  background: var(--ivoire);
+}
+
+.presentation p {
+  max-width: 780px;
+  margin: 0 auto 22px;
+  text-align: center;
+  color: var(--texte-doux);
+  font-size: 1.08rem;
+  line-height: 1.9;
+}
+
+/* =========================================================
+   CHAMBRES
+   ========================================================= */
+.chambres {
+  background: var(--ivoire-fonce);
+}
+
+.chambres-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  gap: 40px;
+}
+
+.chambre-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  background: white;
+  overflow: hidden;
+  box-shadow: var(--ombre-douce);
+  transition: var(--transition);
+  position: relative;
+}
+
+.chambre-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--ombre-forte);
+}
+
+.chambre-img {
+  height: 280px;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.7s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.chambre-card:hover .chambre-img {
+  transform: scale(1.08);
+}
+
+.chambre-info {
+  padding: 35px 30px;
+  position: relative;
+}
+
+.chambre-info h3 {
+  font-size: 1.7rem;
+  margin-bottom: 12px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.chambre-card:hover .chambre-info h3 {
+  color: var(--dore);
+}
+
+.chambre-info p {
+  color: var(--texte-doux);
+  font-size: 0.95rem;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.prix {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  color: var(--dore-texte) !important;
+  font-size: 1.25rem !important;
+  letter-spacing: 1px;
+}
+
+.voir-plus {
+  display: inline-block;
+  margin-top: 18px;
+  color: var(--bleu-nuit);
+  font-weight: 400;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: var(--transition);
+  position: relative;
+}
+
+.voir-plus::after {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 1px;
+  background: var(--dore);
+  vertical-align: middle;
+  margin-left: 10px;
+  transition: width 0.4s ease;
+}
+
+.chambre-card:hover .voir-plus {
+  color: var(--dore);
+}
+
+.chambre-card:hover .voir-plus::after {
+  width: 40px;
+}
+
+/* =========================================================
+   SERVICES
+   ========================================================= */
+.services {
+  background: var(--ivoire);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: 50px;
+  margin-top: 50px;
+}
+
+.service-item {
+  text-align: center;
+  padding: 30px 20px;
+  transition: var(--transition);
+  border: 1px solid transparent;
+}
+
+.service-item:hover {
+  border-color: var(--dore);
+  transform: translateY(-5px);
+}
+
+.service-item h3 {
+  font-size: 1.35rem;
+  margin-bottom: 15px;
+  color: var(--bleu-nuit);
+  font-weight: 500;
+}
+
+.service-item p {
+  color: var(--texte-doux);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* =========================================================
+   CTA
+   ========================================================= */
+.cta {
+  background: var(--bleu-nuit);
+  color: var(--ivoire);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(201, 169, 97, 0.08) 0%, transparent 70%);
+}
+
+.cta .container {
+  position: relative;
+  z-index: 1;
+}
+
+.cta h2 {
+  color: var(--ivoire);
+  margin-bottom: 20px;
+  left: auto;
+  transform: none;
+}
+
+.cta h2::after {
+  background: var(--dore);
+}
+
+.cta p {
+  margin-bottom: 40px;
+  opacity: 0.85;
+  font-size: 1.05rem;
+}
+
+/* =========================================================
+   FORMULAIRE RÉSERVATION
+   ========================================================= */
+.reservation-section {
+  background: var(--ivoire);
+  padding-top: 160px;
+}
+
+.reservation-section h1 {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+
+.form-intro {
+  text-align: center;
+  color: var(--texte-doux);
+  max-width: 620px;
+  margin: 0 auto 60px;
+  font-size: 1.05rem;
+}
+
+.reservation-form {
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+fieldset {
+  min-width: 0;
+  border: 1px solid rgba(201, 169, 97, 0.3);
+  padding: 35px;
+  margin-bottom: 35px;
+  background: white;
+  position: relative;
+  transition: var(--transition);
+}
+
+fieldset:hover {
+  border-color: var(--dore);
+  box-shadow: var(--ombre-douce);
+}
+
+legend {
+  max-width: 100%;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.25rem;
+  color: var(--bleu-nuit);
+  padding: 0 18px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 25px;
+}
+
+.form-group {
+  min-width: 0;
+  max-width: 100%;
+  margin-bottom: 22px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+  color: var(--bleu-nuit);
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  min-width: 0;
+  max-width: 100%;
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #ddd;
+  border-radius: 0;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 300;
+  background: var(--ivoire);
+  transition: var(--transition);
+  color: var(--texte);
+}
+
+.form-group input[type="date"] {
+  -webkit-appearance: none;
+  appearance: none;
+  display: block;
+  box-sizing: border-box;
+  min-inline-size: 0;
+  inline-size: 100%;
+  max-inline-size: 100%;
+  min-height: 52px;
+}
+
+.form-group input[type="date"]::-webkit-date-and-time-value {
+  min-width: 0;
+  text-align: left;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--dore);
+  background: white;
+  box-shadow: 0 0 0 3px rgba(201, 169, 97, 0.1);
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 20px;
+  font-size: 0.9rem;
+  margin-top: 15px;
+}
+
+.form-note {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--texte-doux);
+  margin-top: 20px;
+  font-style: italic;
+}
+
+/* =========================================================
+   CONTACT INFO
+   ========================================================= */
+.contact-info {
+  background: var(--ivoire-fonce);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  gap: 40px;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.contact-item {
+  padding: 25px 15px;
+  transition: var(--transition);
+}
+
+.contact-item:hover {
+  transform: translateY(-5px);
+}
+
+.contact-item h3 {
+  font-size: 0.85rem;
+  margin-bottom: 15px;
+  color: var(--dore-texte);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-family: 'Jost', sans-serif;
+  font-weight: 500;
+}
+
+.contact-item p {
+  color: var(--texte-doux);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/* =========================================================
+   PAGE DÉTAIL CHAMBRE
+   ========================================================= */
+.chambre-detail {
+  padding-top: 160px;
+  padding-bottom: 100px;
+  background: var(--ivoire);
+}
+
+.chambre-detail .container {
+  max-width: 960px;
+}
+
+.chambre-detail h1 {
+  font-size: 3.2rem;
+  margin-bottom: 15px;
+  text-align: center;
+  font-weight: 400;
+}
+
+.prix-detail {
+  text-align: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  color: var(--dore-texte);
+  font-weight: 600;
+  margin-bottom: 50px;
+  letter-spacing: 2px;
+}
+
+.chambre-hero-img {
+  width: 100%;
+  height: 500px;
+  margin-bottom: 50px;
+  background-size: cover;
+  background-position: center;
+  box-shadow: var(--ombre-forte);
+  transition: var(--transition);
+}
+
+.chambre-hero-img:hover {
+  transform: scale(1.01);
+}
+
+.chambre-description {
+  font-size: 1.1rem;
+  color: var(--texte-doux);
+  margin-bottom: 60px;
+  line-height: 1.9;
+  text-align: center;
+  max-width: 750px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.equipements {
+  background: white;
+  padding: 50px 45px;
+  margin-bottom: 50px;
+  border: 1px solid rgba(201, 169, 97, 0.25);
+}
+
+.equipements h2 {
+  font-size: 1.8rem;
+  margin-bottom: 35px;
+  text-align: left;
+  left: 0;
+  transform: none;
+}
+
+.equipements h2::after {
+  margin: 18px 0 0;
+}
+
+.equipements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+  gap: 22px;
+}
+
+.equipement-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 1rem;
+  color: var(--texte);
+  padding: 12px 0;
+  transition: var(--transition);
+  border-bottom: 1px solid rgba(201, 169, 97, 0.12);
+}
+
+.equipement-item:hover {
+  color: var(--dore);
+  padding-left: 8px;
+}
+
+.equipement-item .icone {
+  font-size: 1.3rem;
+  width: 32px;
+  text-align: center;
+  filter: grayscale(0.3);
+  transition: var(--transition);
+}
+
+.equipement-item:hover .icone {
+  filter: grayscale(0);
+  transform: scale(1.15);
+}
+
+.cta-chambre {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.btn-retour {
+  display: inline-block;
+  margin-top: 30px;
+  color: var(--bleu-nuit);
+  text-decoration: none;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: var(--transition);
+  position: relative;
+}
+
+.btn-retour::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--dore);
+  transition: width 0.4s ease;
+}
+
+.btn-retour:hover {
+  color: var(--dore);
+}
+
+.btn-retour:hover::after {
+  width: 100%;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+footer {
+  background: var(--bleu-nuit);
+  color: rgba(248, 245, 239, 0.65);
+  text-align: center;
+  padding: 60px 20px 40px;
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+
+footer p {
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+}
+
+.copyright {
+  margin-top: 25px;
+  font-size: 0.8rem;
+  opacity: 1;
+  font-style: italic;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (max-width: 900px) {
+  .nav-container {
+    padding: 16px 24px;
+    gap: 20px;
+  }
+
+  .nav-links {
+    gap: 20px;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  section h2 {
+    font-size: 2.2rem;
+  }
+
+  .chambre-detail h1 {
+    font-size: 2.3rem;
+  }
+
+  .chambre-hero-img {
+    height: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    scroll-padding-top: 145px;
+  }
+
+  .navbar {
+    position: sticky;
+  }
+
+  .nav-container {
+    flex-direction: column;
+    gap: 8px;
+    padding: 10px 16px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px 16px;
+  }
+
+  .nav-links a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+  }
+
+  .logo {
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+  }
+
+  .btn-reserver {
+    padding: 8px 16px !important;
+    font-size: 0.7rem !important;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.2rem, 7vw, 3rem);
+  }
+
+  .hero {
+    height: auto;
+    min-height: calc(100vh - 108px);
+    min-height: calc(100svh - 108px);
+    padding: 64px 24px;
+    background-attachment: scroll;
+    background-position: 25% center;
+  }
+
+  .hero-subtitle {
+    letter-spacing: 3px;
+  }
+
+  .hero-text {
+    font-size: 1rem;
+  }
+
+  .form-row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-size: 1rem;
+  }
+
+  fieldset {
+    padding: 24px 18px;
+  }
+
+  legend {
+    padding: 0 8px;
+  }
+
+  .reservation-section,
+  .chambre-detail {
+    padding-top: 50px;
+    padding-bottom: 60px;
+  }
+
+  .reservation-section h1 {
+    font-size: 2.4rem;
+    line-height: 1.2;
+  }
+
+  .btn-primary {
+    max-width: 100%;
+    padding: 16px 22px;
+    letter-spacing: 2px;
+    text-align: center;
+  }
+
+  .chambres-grid,
+  .services-grid,
+  .contact-grid {
+    gap: 24px;
+  }
+
+  .section-intro,
+  .form-intro,
+  .chambre-description {
+    margin-bottom: 36px;
+  }
+
+  .chambre-info {
+    padding: 26px 22px;
+  }
+
+  .contact-item p,
+  footer p {
+    overflow-wrap: anywhere;
+  }
+
+  section {
+    padding: 70px 0;
+  }
+
+  .equipements {
+    padding: 35px 25px;
+  }
+
+  .chambre-hero-img {
+    height: 250px;
+  }
+
+  .container {
+    padding: 0 20px;
+  }
+
+  footer {
+    padding: 40px 0 30px;
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .hero {
+    background-attachment: scroll;
+    background-position: 25% center;
+  }
+}
+
+@media (max-width: 380px) {
+  .nav-links {
+    gap: 4px 10px;
+  }
+
+  .nav-links a {
+    font-size: 0.7rem;
+    letter-spacing: 0.5px;
+  }
+
+  .btn-reserver {
+    padding: 8px 10px !important;
+  }
+
+  .equipements {
+    padding: 24px 16px;
+  }
+}
+
+/* Accessibilit? et retour du formulaire de d?monstration */
+:focus-visible {
+  outline: 3px solid #806326;
+  outline-offset: 5px;
+}
+
+.navbar :focus-visible,
+.hero :focus-visible,
+.cta :focus-visible,
+footer :focus-visible {
+  outline-color: var(--dore-clair);
+}
+
+.skip-link {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 2000;
+  padding: 12px 20px;
+  background: var(--ivoire);
+  color: var(--bleu-nuit);
+  transform: translateY(-200%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.form-group input:focus-visible,
+.form-group select:focus-visible,
+.form-group textarea:focus-visible {
+  outline: 3px solid var(--dore-texte);
+  outline-offset: 3px;
+}
+
+.demo-confirmation {
+  margin-top: 28px;
+  padding: 24px;
+  color: var(--bleu-nuit);
+  background: var(--ivoire-fonce);
+  border-left: 4px solid var(--dore-texte);
+}
+
+.demo-confirmation strong {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.demo-confirmation:focus {
+  outline: 3px solid var(--dore-texte);
+  outline-offset: 4px;
+}
+
+.btn-primary:disabled {
+  cursor: not-allowed;
+}
+
+.chambre-card:hover .chambre-info h3,
+.chambre-card:hover .voir-plus,
+.equipement-item:hover,
+.btn-retour:hover {
+  color: var(--dore-texte);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .hero {
+    background-attachment: scroll;
+  }
+
+  .hero .btn-primary:hover,
+  .chambre-card:hover,
+  .chambre-card:hover .chambre-img,
+  .chambre-hero-img:hover,
+  .service-item:hover,
+  .contact-item:hover,
+  .equipement-item:hover .icone {
+    transform: none;
+  }
+}
