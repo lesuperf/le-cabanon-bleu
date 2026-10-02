@@ -4,19 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Le Cabanon Bleu — Hôtel de luxe à Marseille</title>
-  <link rel="stylesheet" href="style.css?v=portfolio-1">
+  <link rel="stylesheet" href="style.css?v=mediterranee-2">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="home">
   <a class="skip-link" href="#contenu">Aller au contenu</a>
 
   <nav class="navbar" aria-label="Navigation principale">
     <div class="nav-container">
-      <a href="index.html" class="logo">Le Cabanon Bleu</a>
+      <a href="index.html" class="logo">Le Cabanon Bleu<span>MARSEILLE · MAISON MÉDITERRANÉENNE</span></a>
       <ul class="nav-links">
-        <li><a href="index.html" aria-current="page">Accueil</a></li>
+        <li><a href="#maison">La maison</a></li>
         <li><a href="#chambres">Chambres</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="contact.html" class="btn-reserver">Réserver</a></li>
@@ -28,23 +28,28 @@
   <header class="hero">
     <div class="hero-content">
       <p class="hero-subtitle">Marseille — Vieux-Port</p>
-      <h1>L'art de vivre méditerranéen</h1>
-      <p class="hero-text">Un hôtel de charme au cœur de la cité phocéenne, à deux pas du Vieux-Port et des Calanques.</p>
-      <a href="contact.html" class="btn-primary">Réserver votre séjour</a>
+      <h1>Les jours bleus,<br><em>les nuits douces.</em></h1>
+      <p class="hero-text">Une maison de charme au cœur de Marseille.<br>Le soleil, la mer, et le plaisir de prendre son temps.</p>
+      <a href="#chambres" class="btn-primary">Découvrir les chambres <span aria-hidden="true">↗</span></a>
     </div>
+    <a href="#maison" class="hero-scroll">Au rythme du Sud <span aria-hidden="true">↓</span></a>
+    <span class="hero-caption">43°17′ N · 5°22′ E</span>
   </header>
 
-  <section class="presentation">
-    <div class="container">
-      <h2>Bienvenue</h2>
-      <p>Né de la passion d'une famille marseillaise, Le Cabanon Bleu vous accueille dans une demeure provençale entièrement rénovée. Ici, le charme de l'ancien rencontre le confort moderne, dans une atmosphère chaleureuse et raffinée.</p>
-      <p>Situé à quelques minutes à pied du Vieux-Port, notre hôtel est le point de départ idéal pour explorer Marseille : ses ruelles du Panier, sa basilique Notre-Dame de la Garde, ses plages et ses calanques.</p>
+  <div class="stay-strip"><span>Une escapade à Marseille</span><p>Chambres & suites dès <strong>110 € / nuit</strong></p><a href="contact.html">Préparer mon séjour <span aria-hidden="true">↗</span></a></div>
+  <section id="maison" class="presentation">
+    <div class="container maison-grid">
+      <div class="maison-photo"><img src="image/vieuxport.jpg" alt="Le Vieux-Port de Marseille et ses bateaux" loading="lazy"><span>Marseille, tout simplement.</span></div>
+      <div class="maison-copy"><p class="eyebrow">L’ESPRIT CABANON</p><h2>Une adresse à part.<br><em>Une ville à vivre.</em></h2>
+      <p>Né de la passion d’une famille marseillaise, Le Cabanon Bleu vous accueille dans une demeure provençale entièrement rénovée. Le charme de l’ancien, le confort d’aujourd’hui et cette douceur qui n’appartient qu’au Sud.</p>
+      <p>À quelques minutes à pied du Vieux-Port, partez explorer les ruelles du Panier, les plages et les calanques. Puis retrouvez le calme de votre maison marseillaise.</p>
+      <a class="text-link" href="#services">Les petits plaisirs du séjour <span aria-hidden="true">↗</span></a></div>
     </div>
   </section>
 
   <section id="chambres" class="chambres">
     <div class="container">
-      <h2>Nos Chambres</h2>
+      <p class="eyebrow">VOTRE REFUGE À MARSEILLE</p><h2>À chacun <em>ses jours bleus.</em></h2>
       <p class="section-intro">Des espaces lumineux et apaisants, décorés dans un style méditerranéen contemporain.</p>
 
       <div class="chambres-grid">
@@ -55,7 +60,7 @@
             <h3>Chambre Confort</h3>
             <p>Lit double, 15 m², climatisation, Wi-Fi gratuit, vue sur le jardin.</p>
             <p class="prix">À partir de 110 € / nuit</p>
-            <span class="voir-plus">Voir le descriptif</span>
+            <span class="voir-plus">Explorer la chambre</span>
           </div>
         </a>
 
@@ -65,7 +70,7 @@
             <h3>Chambre Supérieure</h3>
             <p>Lit king-size, 20 m², balcon privé, vue sur les toits de Marseille.</p>
             <p class="prix">À partir de 145 € / nuit</p>
-            <span class="voir-plus">Voir le descriptif</span>
+            <span class="voir-plus">Explorer la chambre</span>
           </div>
         </a>
 
@@ -75,7 +80,7 @@
             <h3>Suite Méditerranée</h3>
             <p>Espace salon, 30 m², terrasse avec vue mer, baignoire.</p>
             <p class="prix">À partir de 210 € / nuit</p>
-            <span class="voir-plus">Voir le descriptif</span>
+            <span class="voir-plus">Explorer la chambre</span>
           </div>
         </a>
 
@@ -85,22 +90,22 @@
 
   <section id="services" class="services">
     <div class="container">
-      <h2>Nos Services</h2>
+      <p class="eyebrow">PRENDRE LE TEMPS</p><h2>Les plaisirs simples <em>du Sud.</em></h2>
       <div class="services-grid">
         <div class="service-item">
-          <h3>Petit-déjeuner provençal</h3>
+          <span class="service-number">01</span><h3>Petit-déjeuner provençal</h3>
           <p>Produits frais, viennoiseries, confitures maison, servis en terrasse ou en chambre.</p>
         </div>
         <div class="service-item">
-          <h3>Piscine & Jardin</h3>
+          <span class="service-number">02</span><h3>Piscine & Jardin</h3>
           <p>Un espace extérieur arboré avec piscine chauffée, idéal pour se détendre après une journée de visite.</p>
         </div>
         <div class="service-item">
-          <h3>Conciergerie</h3>
+          <span class="service-number">03</span><h3>Conciergerie</h3>
           <p>Réservation de restaurants, excursions en bateau, visites guidées des Calanques.</p>
         </div>
         <div class="service-item">
-          <h3>Wi-Fi & Espace de travail</h3>
+          <span class="service-number">04</span><h3>Wi-Fi & Espace de travail</h3>
           <p>Connexion fibre gratuite dans tout l'établissement, coin bureau disponible.</p>
         </div>
       </div>
@@ -109,7 +114,7 @@
 
   <section class="cta">
     <div class="container">
-      <h2>Prêt à découvrir Marseille ?</h2>
+      <p class="eyebrow">LA MÉDITERRANÉE VOUS ATTEND</p><h2>Et si vous restiez<br><em>encore un peu ?</em></h2>
       <p>Réservez directement sur notre site pour bénéficier des meilleurs tarifs.</p>
       <a href="contact.html" class="btn-primary">Réserver maintenant</a>
     </div>
