@@ -1,79 +1,172 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chambre Supérieure — Le Cabanon Bleu</title>
-  <link rel="stylesheet" href="style.css?v=mediterranee-2">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
-</head>
-<body>
-  <a class="skip-link" href="#contenu">Aller au contenu</a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chambre Supérieure — Le Cabanon Bleu</title>
+    <link rel="stylesheet" href="style.css?v=palette-mer-12" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Jost:wght@200;300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <script src="navigation.js?v=1" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#contenu">Aller au contenu</a>
 
-  <nav class="navbar" aria-label="Navigation principale">
-    <div class="nav-container">
-      <a href="index.html" class="logo">Le Cabanon Bleu</a>
-      <ul class="nav-links">
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="index.html#chambres">Chambres</a></li>
-        <li><a href="contact.html" class="btn-reserver">Réserver</a></li>
-      </ul>
-    </div>
-  </nav>
+    <nav class="navbar" aria-label="Navigation principale">
+      <div class="nav-container">
+        <a href="index.html" class="logo"
+          >Le Cabanon Bleu<span
+            >MARSEILLE &middot; MAISON M&Eacute;DITERRAN&Eacute;ENNE</span
+          ></a
+        >
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="navigation-links"
+          hidden
+        >
+          <span class="nav-toggle-label">Menu</span
+          ><span class="nav-toggle-icon" aria-hidden="true"></span>
+        </button>
+        <ul class="nav-links" id="navigation-links">
+          <li><a href="index.html#maison">La maison</a></li>
+          <li class="nav-room-item">
+            <details class="nav-rooms">
+              <summary>
+                Chambres <span aria-hidden="true">&#8964;</span>
+              </summary>
+              <ul class="nav-room-menu">
+                <li>
+                  <a href="chambre-confort.html"
+                    ><span>Chambre Confort</span
+                    ><small>15 m&sup2; &middot; Vue jardin</small></a
+                  >
+                </li>
+                <li>
+                  <a href="chambre-superieure.html" aria-current="page"
+                    ><span>Chambre Sup&eacute;rieure</span
+                    ><small>20 m&sup2; &middot; Balcon priv&eacute;</small></a
+                  >
+                </li>
+                <li>
+                  <a href="suite-mediterranee.html"
+                    ><span>Suite M&eacute;diterran&eacute;e</span
+                    ><small>30 m&sup2; &middot; Terrasse vue mer</small></a
+                  >
+                </li>
+                <li>
+                  <a href="index.html#chambres" class="nav-all-rooms"
+                    >Toutes les chambres
+                    <span aria-hidden="true">&#8599;</span></a
+                  >
+                </li>
+              </ul>
+            </details>
+          </li>
+          <li><a href="index.html#services">Les services</a></li>
+          <li>
+            <a href="contact.html" class="btn-reserver"
+              >R&eacute;server <span aria-hidden="true">&#8599;</span></a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
 
-  <main id="contenu" tabindex="-1">
+    <main id="contenu" tabindex="-1">
+      <section class="chambre-detail">
+        <div class="container">
+          <h1>Chambre Supérieure</h1>
+          <p class="prix-detail">À partir de 145 € / nuit</p>
 
-  <section class="chambre-detail">
-    <div class="container">
-      <h1>Chambre Supérieure</h1>
-      <p class="prix-detail">À partir de 145 € / nuit</p>
+          <div
+            class="chambre-hero-img"
+            style="background: #f5576c url('image/chambre2.jpg') center/cover"
+          ></div>
 
-      <div class="chambre-hero-img" style="background: #f5576c url('image/chambre2.jpg') center/cover;"></div>
+          <p class="chambre-description">
+            Plus spacieuse et baignée de lumière, la Chambre Supérieure vous
+            offre un balcon privé avec une vue imprenable sur les toits de
+            Marseille. Son ambiance élégante et apaisante, mêlant matières
+            naturelles et tons chauds, en fait un choix parfait pour un séjour
+            romantique ou une escapade prolongée.
+          </p>
 
-      <p class="chambre-description">
-        Plus spacieuse et baignée de lumière, la Chambre Supérieure vous offre un balcon privé
-        avec une vue imprenable sur les toits de Marseille. Son ambiance élégante et apaisante,
-        mêlant matières naturelles et tons chauds, en fait un choix parfait pour un séjour
-        romantique ou une escapade prolongée.
-      </p>
+          <div class="equipements">
+            <h2>Équipements de la chambre</h2>
+            <div class="equipements-grid">
+              <div class="equipement-item">
+                <span class="icone" aria-hidden="true">📶</span> Wi-Fi fibre
+                gratuit
+              </div>
+              <div class="equipement-item">
+                <span class="icone" aria-hidden="true">❄️</span> Climatisation
+              </div>
+              <div class="equipement-item">
+                <span class="icone" aria-hidden="true">🚿</span> Douche à
+                l'italienne
+              </div>
+              <div class="equipement-item">
+                <span class="icone" aria-hidden="true">🚽</span> WC séparés
+              </div>
+              <div class="equipement-item">
+                <span class="icone" aria-hidden="true">📺</span> TV écran plat
+                4K
+              </div>
+              <div class="equipement-item">
+                <span class="icone" aria-hidden="true">🛏️</span> Lit king-size
+                180×200
+              </div>
+              <div class="equipement-item">
+                <span class="icone" aria-hidden="true">🧴</span> Produits
+                d'accueil haut de gamme
+              </div>
+              <div class="equipement-item">
+                <span class="icone" aria-hidden="true">🔒</span> Coffre-fort
+              </div>
+              <div class="equipement-item">
+                <span class="icone" aria-hidden="true">☕</span> Machine
+                Nespresso
+              </div>
+              <div class="equipement-item">
+                <span class="icone" aria-hidden="true">🌇</span> Balcon privé
+                avec vue
+              </div>
+              <div class="equipement-item">
+                <span class="icone" aria-hidden="true">🧊</span> Mini-bar
+              </div>
+              <div class="equipement-item">
+                <span class="icone" aria-hidden="true">📐</span> 20 m²
+              </div>
+            </div>
+          </div>
 
-      <div class="equipements">
-        <h2>Équipements de la chambre</h2>
-        <div class="equipements-grid">
-          <div class="equipement-item"><span class="icone" aria-hidden="true">📶</span> Wi-Fi fibre gratuit</div>
-          <div class="equipement-item"><span class="icone" aria-hidden="true">❄️</span> Climatisation</div>
-          <div class="equipement-item"><span class="icone" aria-hidden="true">🚿</span> Douche à l'italienne</div>
-          <div class="equipement-item"><span class="icone" aria-hidden="true">🚽</span> WC séparés</div>
-          <div class="equipement-item"><span class="icone" aria-hidden="true">📺</span> TV écran plat 4K</div>
-          <div class="equipement-item"><span class="icone" aria-hidden="true">🛏️</span> Lit king-size 180×200</div>
-          <div class="equipement-item"><span class="icone" aria-hidden="true">🧴</span> Produits d'accueil haut de gamme</div>
-          <div class="equipement-item"><span class="icone" aria-hidden="true">🔒</span> Coffre-fort</div>
-          <div class="equipement-item"><span class="icone" aria-hidden="true">☕</span> Machine Nespresso</div>
-          <div class="equipement-item"><span class="icone" aria-hidden="true">🌇</span> Balcon privé avec vue</div>
-          <div class="equipement-item"><span class="icone" aria-hidden="true">🧊</span> Mini-bar</div>
-          <div class="equipement-item"><span class="icone" aria-hidden="true">📐</span> 20 m²</div>
+          <div class="cta-chambre">
+            <a href="contact.html?chambre=superieure" class="btn-primary"
+              >Réserver cette chambre</a
+            >
+            <br />
+            <a href="index.html#chambres" class="btn-retour"
+              >← Retour aux chambres</a
+            >
+          </div>
         </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>Le Cabanon Bleu — 12 rue de la République, 13001 Marseille</p>
+        <p>Tél : 04 91 XX XX XX — contact@lecabanonbleu.fr</p>
+        <p class="copyright">
+          © 2026 Le Cabanon Bleu. Site fictif à but démonstratif.
+        </p>
       </div>
-
-      <div class="cta-chambre">
-        <a href="contact.html?chambre=superieure" class="btn-primary">Réserver cette chambre</a>
-        <br>
-        <a href="index.html#chambres" class="btn-retour">← Retour aux chambres</a>
-      </div>
-    </div>
-  </section>
-
-  </main>
-
-  <footer>
-    <div class="container">
-      <p>Le Cabanon Bleu — 12 rue de la République, 13001 Marseille</p>
-      <p>Tél : 04 91 XX XX XX — contact@lecabanonbleu.fr</p>
-      <p class="copyright">© 2026 Le Cabanon Bleu. Site fictif à but démonstratif.</p>
-    </div>
-  </footer>
-
-</body>
+    </footer>
+  </body>
 </html>
