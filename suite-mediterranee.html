@@ -2,94 +2,128 @@
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <title>Suite Méditerranée — Le Cabanon Bleu</title>
-    <link rel="stylesheet" href="style.css?v=palette-mer-12" />
+    <script>
+      // JS actif : le CSS peut préparer les animations.
+      // Si GSAP n'est pas chargé après 3 s, tout le contenu s'affiche quand même.
+      document.documentElement.classList.add('js');
+      setTimeout(function () {
+        if (!window.gsap) document.documentElement.classList.add('no-gsap');
+      }, 3000);
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Jost:wght@200;300;400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300..700&display=swap"
       rel="stylesheet"
     />
-    <script src="navigation.js?v=1" defer></script>
+    <link rel="stylesheet" href="style.css?v=refonte-4" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"
+      integrity="sha384-g4NTh/Iv5PPU4xPyhEWqPcwtNXOvdaDI8LLnyYfyNZOjKJeYQyjzQ9X5275eBjpt"
+      crossorigin="anonymous"
+      defer
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"
+      integrity="sha384-Z3REaz79l2IaAZqJsSABtTbhjgOUYyV3p90XNnAPCSHg3EMTz1fouunq9WZRtj3d"
+      crossorigin="anonymous"
+      defer
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"
+      integrity="sha384-B2WBjDzEjJpYvhmi2UyEn7rektqkf5suS6sNoyyrf0EBAwBHdkiXxIlU0V5Ru2ed"
+      crossorigin="anonymous"
+      defer
+    ></script>
+    <script src="navigation.js?v=2" defer></script>
+    <script src="main.js?v=4" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#contenu">Aller au contenu</a>
 
-    <nav class="navbar" aria-label="Navigation principale">
-      <div class="nav-container">
-        <a href="index.html" class="logo"
-          >Le Cabanon Bleu<span
-            >MARSEILLE &middot; MAISON M&Eacute;DITERRAN&Eacute;ENNE</span
-          ></a
-        >
-        <button
-          class="nav-toggle"
-          type="button"
-          aria-expanded="false"
-          aria-controls="navigation-links"
-          hidden
-        >
-          <span class="nav-toggle-label">Menu</span
-          ><span class="nav-toggle-icon" aria-hidden="true"></span>
-        </button>
-        <ul class="nav-links" id="navigation-links">
-          <li><a href="index.html#maison">La maison</a></li>
-          <li class="nav-room-item">
-            <details class="nav-rooms">
-              <summary>
-                Chambres <span aria-hidden="true">&#8964;</span>
-              </summary>
-              <ul class="nav-room-menu">
-                <li>
-                  <a href="chambre-confort.html"
-                    ><span>Chambre Confort</span
-                    ><small>15 m&sup2; &middot; Vue jardin</small></a
-                  >
-                </li>
-                <li>
-                  <a href="chambre-superieure.html"
-                    ><span>Chambre Sup&eacute;rieure</span
-                    ><small>20 m&sup2; &middot; Balcon priv&eacute;</small></a
-                  >
-                </li>
-                <li>
-                  <a href="suite-mediterranee.html" aria-current="page"
-                    ><span>Suite M&eacute;diterran&eacute;e</span
-                    ><small>30 m&sup2; &middot; Terrasse vue mer</small></a
-                  >
-                </li>
-                <li>
-                  <a href="index.html#chambres" class="nav-all-rooms"
-                    >Toutes les chambres
-                    <span aria-hidden="true">&#8599;</span></a
-                  >
-                </li>
-              </ul>
-            </details>
-          </li>
-          <li><a href="index.html#services">Les services</a></li>
-          <li>
-            <a href="contact.html" class="btn-reserver"
-              >R&eacute;server <span aria-hidden="true">&#8599;</span></a
-            >
-          </li>
-        </ul>
-      </div>
-    </nav>
+    <header class="site-header">
+      <nav class="navbar" aria-label="Navigation principale">
+        <div class="nav-container">
+          <a href="index.html" class="logo"
+            >Le Cabanon Bleu<span
+              >MARSEILLE &middot; MAISON M&Eacute;DITERRAN&Eacute;ENNE</span
+            ></a
+          >
+          <button
+            class="nav-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="navigation-links"
+            hidden
+          >
+            <span class="nav-toggle-label">Menu</span
+            ><span class="nav-toggle-icon" aria-hidden="true"></span>
+          </button>
+          <ul class="nav-links" id="navigation-links">
+            <li><a href="index.html#maison">La maison</a></li>
+            <li class="nav-room-item">
+              <details class="nav-rooms">
+                <summary>
+                  Chambres <span aria-hidden="true">&#8964;</span>
+                </summary>
+                <ul class="nav-room-menu">
+                  <li>
+                    <a href="chambre-confort.html"
+                      ><span>Chambre Confort</span
+                      ><small>15 m&sup2; &middot; Vue jardin</small></a
+                    >
+                  </li>
+                  <li>
+                    <a href="chambre-superieure.html"
+                      ><span>Chambre Sup&eacute;rieure</span
+                      ><small>20 m&sup2; &middot; Balcon priv&eacute;</small></a
+                    >
+                  </li>
+                  <li>
+                    <a href="suite-mediterranee.html" aria-current="page"
+                      ><span>Suite M&eacute;diterran&eacute;e</span
+                      ><small>30 m&sup2; &middot; Terrasse vue mer</small></a
+                    >
+                  </li>
+                  <li>
+                    <a href="index.html#chambres" class="nav-all-rooms"
+                      >Toutes les chambres
+                      <span aria-hidden="true">&#8599;</span></a
+                    >
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li><a href="index.html#services">Les services</a></li>
+            <li>
+              <a href="contact.html" class="btn-reserver"
+                >R&eacute;server <span aria-hidden="true">&#8599;</span></a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
 
     <main id="contenu" tabindex="-1">
       <section class="chambre-detail">
         <div class="container">
-          <h1>Suite Méditerranée</h1>
-          <p class="prix-detail">À partir de 210 € / nuit</p>
+          <h1 data-split>Suite Méditerranée</h1>
+          <p class="prix-detail" data-reveal>À partir de 210 € / nuit</p>
 
-          <div
-            class="chambre-hero-img"
-            style="background: #4facfe url('image/chambre3.jpg') center/cover"
-          ></div>
+          <div class="chambre-hero-img" data-mask>
+            <img
+              src="image/chambre3.webp"
+              alt="Suite Méditerranée : chambre lumineuse ouvrant sur une terrasse arborée"
+              width="1920"
+              height="1440"
+              fetchpriority="high"
+            />
+          </div>
 
-          <p class="chambre-description">
+          <p class="chambre-description" data-reveal>
             Notre suite d'exception, spacieuse et baignée de lumière, vous ouvre
             les portes d'un véritable art de vivre méditerranéen. Avec son
             espace salon indépendant et sa terrasse privative offrant une vue
@@ -98,60 +132,59 @@
           </p>
 
           <div class="equipements">
-            <h2>Équipements de la suite</h2>
+            <h2 data-split>Équipements de la suite</h2>
             <div class="equipements-grid">
-              <div class="equipement-item">
+              <div class="equipement-item" data-reveal>
                 <span class="icone" aria-hidden="true">📶</span> Wi-Fi fibre
                 gratuit
               </div>
-              <div class="equipement-item">
+              <div class="equipement-item" data-reveal>
                 <span class="icone" aria-hidden="true">❄️</span> Climatisation
               </div>
-              <div class="equipement-item">
+              <div class="equipement-item" data-reveal>
                 <span class="icone" aria-hidden="true">🛁</span> Baignoire &
                 douche séparées
               </div>
-              <div class="equipement-item">
+              <div class="equipement-item" data-reveal>
                 <span class="icone" aria-hidden="true">🚽</span> WC séparés
               </div>
-              <div class="equipement-item">
+              <div class="equipement-item" data-reveal>
                 <span class="icone" aria-hidden="true">📺</span> TV 4K chambre &
                 salon
               </div>
-              <div class="equipement-item">
+              <div class="equipement-item" data-reveal>
                 <span class="icone" aria-hidden="true">🛏️</span> Lit king-size
                 180×200
               </div>
-              <div class="equipement-item">
+              <div class="equipement-item" data-reveal>
                 <span class="icone" aria-hidden="true">🛋️</span> Espace salon
                 avec canapé
               </div>
-              <div class="equipement-item">
+              <div class="equipement-item" data-reveal>
                 <span class="icone" aria-hidden="true">🌊</span> Terrasse privée
                 vue mer
               </div>
-              <div class="equipement-item">
+              <div class="equipement-item" data-reveal>
                 <span class="icone" aria-hidden="true">🍾</span> Corbeille de
                 fruits & champagne
               </div>
-              <div class="equipement-item">
+              <div class="equipement-item" data-reveal>
                 <span class="icone" aria-hidden="true">☕</span> Machine
                 Nespresso
               </div>
-              <div class="equipement-item">
+              <div class="equipement-item" data-reveal>
                 <span class="icone" aria-hidden="true">🧊</span> Mini-bar garni
               </div>
-              <div class="equipement-item">
+              <div class="equipement-item" data-reveal>
                 <span class="icone" aria-hidden="true">📐</span> 30 m²
               </div>
             </div>
           </div>
 
-          <div class="cta-chambre">
+          <div class="cta-chambre" data-reveal>
             <a href="contact.html?chambre=suite" class="btn-primary"
               >Réserver cette suite</a
             >
-            <br />
             <a href="index.html#chambres" class="btn-retour"
               >← Retour aux chambres</a
             >
@@ -160,13 +193,38 @@
       </section>
     </main>
 
-    <footer>
-      <div class="container">
-        <p>Le Cabanon Bleu — 12 rue de la République, 13001 Marseille</p>
-        <p>Tél : 04 91 XX XX XX — contact@lecabanonbleu.fr</p>
+    <a class="mobile-book" href="contact.html?chambre=suite"
+      ><span><strong>Réserver</strong> <small>210 € / nuit</small></span
+      ><span class="mobile-book-arrow" aria-hidden="true">↗</span></a
+    >
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <p class="footer-logo">Le Cabanon Bleu</p>
+          <p>Marseille · Maison méditerranéenne</p>
+        </div>
+        <div>
+          <h2 class="footer-title">Adresse</h2>
+          <address>12 rue de la République<br />13001 Marseille</address>
+        </div>
+        <div>
+          <h2 class="footer-title">Contact</h2>
+          <p>Tél : 04 91 XX XX XX<br />contact@lecabanonbleu.fr</p>
+        </div>
+        <div>
+          <h2 class="footer-title">Réception</h2>
+          <p>Ouverte 24h/24 et 7j/7</p>
+        </div>
+      </div>
+      <p class="footer-wordmark" aria-hidden="true">Le Cabanon Bleu</p>
+      <div class="container footer-bottom">
         <p class="copyright">
           © 2026 Le Cabanon Bleu. Site fictif à but démonstratif.
         </p>
+        <a href="#contenu" class="footer-top"
+          >Haut de page <span aria-hidden="true">↑</span></a
+        >
       </div>
     </footer>
   </body>
